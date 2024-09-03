@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <!-- NOTE creates an icon that links to this repository on github -->
   <script src="https://cdn.jsdelivr.net/gh//Jeremy-Fowler/githubIconAppender/main.js" defer></script>
   <link rel="stylesheet" href="style.css">
@@ -27,9 +27,15 @@
                 <p class="name">Harriet</p>
                 <p class="emoji mb-0">🦛</p>
               </div>
-              <p class="d-flex justify-content-between"><span>HP:</span><span>100</span></p>
-              <p class="d-flex justify-content-between"><span>GOLD:</span><span>100</span></p>
-              <p class="d-flex justify-content-between"><span>LVL:</span><span>1</span></p>
+              <p class="d-flex justify-content-between">
+                <span>HP:</span><span class="health">100</span>
+              </p>
+              <p class="d-flex justify-content-between">
+                <span>GOLD:</span><span>100</span>
+              </p>
+              <p class="d-flex justify-content-between">
+                <span>LVL:</span><span class="level">1</span>
+              </p>
             </div>
           </div>
         </div>
@@ -40,9 +46,12 @@
                 <p class="name">Oslo</p>
                 <p class="emoji mb-0">🦧</p>
               </div>
-              <p class="d-flex justify-content-between"><span>HP:</span><span>100</span></p>
-              <p class="d-flex justify-content-between"><span>GOLD:</span><span>100</span></p>
-              <p class="d-flex justify-content-between"><span>LVL:</span><span>1</span></p>
+              <p class="d-flex justify-content-between">
+                <span>HP:</span><span class="health">100</span>
+              </p>
+              <p class="d-flex justify-content-between">
+                <span>LVL:</span><span class="level">1</span>
+              </p>
             </div>
           </div>
         </div>
@@ -56,13 +65,16 @@
               <div class="progress-bar bg-danger" style="width: 100%;"></div>
             </div>
             <p class="fs-1">GOOEY BOY</p>
-            <img src="https://em-content.zobj.net/source/microsoft-teams/363/jellyfish_1fabc.png" alt="Scary Jellyfish">
+            <img onclick="attackBoss()" title="Attack the boss!" role="button"
+              src="https://em-content.zobj.net/source/microsoft-teams/363/jellyfish_1fabc.png" alt="Scary Jellyfish">
           </div>
         </div>
       </section>
     </div>
 
   </main>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
