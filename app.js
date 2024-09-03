@@ -56,7 +56,7 @@ function checkForLoss() {
   const youLose = heroes.every(hero => hero.health == 0)
   if (!youLose) return
 
-  const wantsToPlayAgain = window.prompt('You lose! Play again?')
+  const wantsToPlayAgain = window.confirm('You lose! Play again?')
   if (!wantsToPlayAgain) return
 
   boss.health = boss.maxHealth
