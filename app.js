@@ -4,13 +4,15 @@ const heroes = [
     name: 'harriet',
     type: 'hippo',
     damage: 5,
-    health: 100
+    health: 100,
+    maxHealth: 100
   },
   {
     name: 'oslo',
     type: 'orangutan',
     damage: 10,
-    health: 50
+    health: 50,
+    maxHealth: 50
   }
 ]
 
@@ -42,8 +44,26 @@ function attackBoss() {
 function bossAttack() {
   heroes.forEach(hero => {
     hero.health -= boss.damage
+    if (hero.health < 1) {
+      hero.health = 0
+    }
   })
+  checkForLoss()
   drawHeroStats()
+}
+
+function checkForLoss() {
+  const youLose = heroes.every(hero => hero.health == 0)
+  if (!youLose) return
+
+  const wantsToPlayAgain = window.prompt('You lose! Play again?')
+  if (!wantsToPlayAgain) return
+
+  boss.health = boss.maxHealth
+  boss.level = 1
+  drawBossStats()
+
+  heroes.forEach(hero => hero.health = hero.maxHealth)
 }
 //#endregion
 
@@ -66,6 +86,14 @@ function drawHeroStats() {
     const heroHealthElem = heroElem.querySelector('.health')
     // @ts-ignore
     heroHealthElem.innerText = hero.health
+
+    const heroEmojiElem = heroElem.querySelector('.emoji')
+    if (hero.health == 0) {
+      heroEmojiElem.classList.add('perished')
+    }
+    else {
+      heroEmojiElem.classList.remove('perished')
+    }
   })
 }
 //#endregion

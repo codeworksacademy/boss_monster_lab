@@ -36,6 +36,11 @@ body {
   font-size: 4rem;
 }
 
+.perished {
+  filter: grayscale(1);
+  rotate: 180deg;
+}
+
 .hero-card img {
   height: 10dvh;
 }
