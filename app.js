@@ -29,6 +29,7 @@ function attackBoss() {
   let totalDamage = 0
 
   heroes.forEach(hero => {
+    if (hero.health == 0) return
     totalDamage += hero.damage
   })
 
@@ -36,6 +37,7 @@ function attackBoss() {
 
   if (boss.health < 1) {
     boss.health = 0
+    levelUpBoss()
   }
 
   drawBossStats()
@@ -43,7 +45,7 @@ function attackBoss() {
 
 function bossAttack() {
   heroes.forEach(hero => {
-    hero.health -= boss.damage
+    hero.health -= Math.floor(boss.damage * (boss.level * Math.random()))
     if (hero.health < 1) {
       hero.health = 0
     }
@@ -65,11 +67,17 @@ function checkForLoss() {
 
   heroes.forEach(hero => hero.health = hero.maxHealth)
 }
+
+function levelUpBoss() {
+  boss.level++
+  boss.maxHealth = Math.floor(boss.maxHealth * (boss.level * Math.random()))
+  boss.health = boss.maxHealth
+}
 //#endregion
 
 //#region Draw
 function drawBossStats() {
-  const bossHealthPercentage = Math.floor(boss.health * boss.maxHealth / 100)
+  const bossHealthPercentage = Math.floor((boss.health / boss.maxHealth) * 100)
 
   const bossElem = document.getElementById('boss')
 
