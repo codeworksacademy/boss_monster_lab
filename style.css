@@ -13,12 +13,28 @@ body {
 }
 
 .hero-card {
-  border: solid azure 3px;
-  border-radius: 15px;
-  background-color: #303030;
   color: azure;
+  background-color: #303030;
   font-size: 1.2rem;
   padding: 1rem;
+}
+
+.card-border {
+  border: solid azure 3px;
+  border-radius: 15px;
+}
+
+.boss-card {
+  padding: 1rem;
+  color: azure;
+  text-shadow: 2px 2px black;
+  background-image: url(https://images.unsplash.com/photo-1516214104703-d870798883c5?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: bottom;
+}
+
+.emoji {
+  font-size: 4rem;
 }
 
 .hero-card img {

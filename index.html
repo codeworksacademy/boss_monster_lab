@@ -18,15 +18,14 @@
 
 <body>
   <main>
-    <section class="container-fluid">
-      <div class="row my-1">
+    <div class="container-fluid">
+      <section class="row my-1">
         <div class="col-6 col-md-3">
-          <div class="p-2">
-            <div class="hero-card">
+          <div id="harriet" class="p-2">
+            <div class="hero-card card-border">
               <div class="d-flex justify-content-between">
-                <p>Jerms</p>
-                <img src="https://www.spriters-resource.com/resources/sheet_icons/144/147378.gif?updated=1611006428"
-                  alt="Jerms taking a walk">
+                <p class="name">Harriet</p>
+                <p class="emoji mb-0">🦛</p>
               </div>
               <p class="d-flex justify-content-between"><span>HP:</span><span>100</span></p>
               <p class="d-flex justify-content-between"><span>GOLD:</span><span>100</span></p>
@@ -35,12 +34,11 @@
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="p-2">
-            <div class="hero-card">
+          <div id="oslo" class="p-2">
+            <div class="hero-card card-border">
               <div class="d-flex justify-content-between">
-                <p>Jake</p>
-                <img src="https://www.spriters-resource.com/resources/sheet_icons/144/147372.gif?updated=1611006260"
-                  alt="Jake taking a walk">
+                <p class="name">Oslo</p>
+                <p class="emoji mb-0">🦧</p>
               </div>
               <p class="d-flex justify-content-between"><span>HP:</span><span>100</span></p>
               <p class="d-flex justify-content-between"><span>GOLD:</span><span>100</span></p>
@@ -48,8 +46,22 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="row">
+        <div class="col-md-8 m-auto">
+          <div id="boss" class="boss-card card-border text-center">
+            <div class="progress" role="progressbar" aria-label="Boss Health" aria-valuenow="100" aria-valuemin="0"
+              aria-valuemax="100">
+              <div class="progress-bar bg-danger" style="width: 100%;"></div>
+            </div>
+            <p class="fs-1">GOOEY BOY</p>
+            <img src="https://em-content.zobj.net/source/microsoft-teams/363/jellyfish_1fabc.png" alt="Scary Jellyfish">
+          </div>
+        </div>
+      </section>
+    </div>
+
   </main>
 </body>
 
