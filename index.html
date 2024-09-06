@@ -21,9 +21,9 @@
     <div class="container-fluid">
       <section class="row my-1">
         <div class="col-6 col-lg-3">
-          <div id="harriet" class="p-2">
+          <div onclick="healHero('harriet')" id="harriet" class="p-2">
             <div class="hero-card card-border">
-              <p class="d-lg-flex justify-content-between mb-1">
+              <p class="d-flex flex-wrap justify-content-between mb-1">
                 <span class="name">Harriet</span>
                 <span class="emoji">🦛</span>
               </p>
@@ -31,7 +31,7 @@
                 <span>HP:</span><span class="health">100</span>
               </p>
               <p class="d-flex justify-content-between">
-                <span>GOLD:</span><span>100</span>
+                <span>GOLD:</span><span id="hero-gold">0</span>
               </p>
               <p class="d-flex justify-content-between">
                 <span>LVL:</span><span class="level">1</span>
@@ -40,9 +40,9 @@
           </div>
         </div>
         <div class="col-6 col-lg-3">
-          <div id="oslo" class="p-2">
+          <div onclick="healHero('oslo')" id="oslo" class="p-2">
             <div class="hero-card card-border">
-              <div class="d-lg-flex justify-content-between">
+              <div class="d-flex flex-wrap justify-content-between">
                 <p class="name">Oslo</p>
                 <p class="emoji mb-0">🦧</p>
               </div>

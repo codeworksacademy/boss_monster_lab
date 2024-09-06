@@ -1,4 +1,6 @@
-//#region Data
+//#region Data 💾
+let heroGold = 0
+
 const heroes = [
   {
     name: 'harriet',
@@ -22,9 +24,15 @@ const boss = {
   damage: 5,
   level: 1
 }
+
+const potion = {
+  price: 10,
+  recoveryPoints: 10
+}
+
 //#endregion
 
-//#region Logic
+//#region Logic 🧠
 function attackBoss() {
   let totalDamage = 0
 
@@ -61,6 +69,7 @@ function checkForLoss() {
   const wantsToPlayAgain = window.confirm('You lose! Play again?')
   if (!wantsToPlayAgain) return
 
+  boss.maxHealth = 100
   boss.health = boss.maxHealth
   boss.level = 1
   drawBossStats()
@@ -72,10 +81,25 @@ function levelUpBoss() {
   boss.level++
   boss.maxHealth = Math.floor(boss.maxHealth * (boss.level * Math.random()))
   boss.health = boss.maxHealth
+  heroGold += Math.ceil(Math.random() * 100)
+  drawHeroGold()
+}
+
+function healHero(heroName) {
+  if (heroGold < potion.price) {
+    window.alert(`You need ${potion.price - heroGold} more gold to afford a potion!`)
+    return
+  }
+
+  const hero = heroes.find(hero => hero.name == heroName)
+  hero.health += potion.recoveryPoints
+  heroGold -= potion.price
+  drawHeroGold()
+  drawHeroStats()
 }
 //#endregion
 
-//#region Draw
+//#region Drawing ✏️
 function drawBossStats() {
   const bossHealthPercentage = Math.floor((boss.health / boss.maxHealth) * 100)
 
@@ -104,9 +128,14 @@ function drawHeroStats() {
     }
   })
 }
+
+function drawHeroGold() {
+  const heroGoldElem = document.getElementById('hero-gold')
+  heroGoldElem.innerText = heroGold.toString()
+}
 //#endregion
 
-// #region Page Load
+// #region Page Load 🔃
 
 drawHeroStats()
 
