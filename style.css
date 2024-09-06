@@ -57,3 +57,7 @@ body {
 .boss-img:active {
   filter: drop-shadow(16px 16px 80px red);
 }
+
+.col-6>div {
+  user-select: none;
+}
